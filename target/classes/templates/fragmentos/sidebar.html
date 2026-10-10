@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<div th:fragment="sidebar" class="sidebar d-flex flex-column p-3" style="width:240px;min-height:calc(100vh - 56px);background-color:#212121;">
+    <ul class="nav nav-pills flex-column mb-auto gap-1">
+        <li class="nav-item">
+            <a th:href="@{/dashboard}" class="nav-link text-white">
+                <i class="bi bi-speedometer2 me-2"></i>Dashboard
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/productos}" class="nav-link text-white">
+                <i class="bi bi-box-seam me-2"></i>Productos
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/categorias}" class="nav-link text-white">
+                <i class="bi bi-tags me-2"></i>Categorías
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/clientes}" class="nav-link text-white">
+                <i class="bi bi-people me-2"></i>Clientes
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/ventas}" class="nav-link text-white">
+                <i class="bi bi-receipt me-2"></i>Ventas
+            </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/inventario}" class="nav-link text-white">
+                <i class="bi bi-clipboard2-data me-2"></i>Inventario
+            </a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+            <a th:href="@{/usuarios}" class="nav-link text-white">
+                <i class="bi bi-person-gear me-2"></i>Usuarios
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
